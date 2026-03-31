@@ -1,0 +1,465 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>2.变量&amp;运算符 | Elaina-boom</title><meta name="author" content="Elaina-boom"><meta name="copyright" content="Elaina-boom"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="变量&amp;运算符1 变量1.1 变量概述在程序执行过程中，在某个范围内其值可以发生改变的量 从本质上讲，变量是内存中储存数据的一块区域。 定义格式： 1数据类型 变量名 &#x3D; 字面量值;  1.2 标识符作用:  给包、类、方法、变量等起名字的  组成规则(硬性规定):  由字符,下划线_,美元符$组成 这里的字符采用的是Unicode字符集，包含英文大小写字母，中文字符，数字字符等。符号只有两">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2.变量&amp;运算符">
+<meta property="og:url" content="http://elainaboom.github.io/2026/03/31/2-%E5%8F%98%E9%87%8F-%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">
+<meta property="og:site_name" content="Elaina-boom">
+<meta property="og:description" content="变量&amp;运算符1 变量1.1 变量概述在程序执行过程中，在某个范围内其值可以发生改变的量 从本质上讲，变量是内存中储存数据的一块区域。 定义格式： 1数据类型 变量名 &#x3D; 字面量值;  1.2 标识符作用:  给包、类、方法、变量等起名字的  组成规则(硬性规定):  由字符,下划线_,美元符$组成 这里的字符采用的是Unicode字符集，包含英文大小写字母，中文字符，数字字符等。符号只有两">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://elainaboom.github.io/assets/images/elaina/elaina10.jpg">
+<meta property="article:published_time" content="2026-03-31T07:41:09.486Z">
+<meta property="article:modified_time" content="2026-03-31T07:52:41.709Z">
+<meta property="article:author" content="Elaina-boom">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://elainaboom.github.io/assets/images/elaina/elaina10.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "2.变量&运算符",
+  "url": "http://elainaboom.github.io/2026/03/31/2-%E5%8F%98%E9%87%8F-%E8%BF%90%E7%AE%97%E7%AC%A6/",
+  "image": "http://elainaboom.github.io/assets/images/elaina/elaina10.jpg",
+  "datePublished": "2026-03-31T07:41:09.486Z",
+  "dateModified": "2026-03-31T07:52:41.709Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Elaina-boom",
+      "url": "http://elainaboom.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://elainaboom.github.io/2026/03/31/2-%E5%8F%98%E9%87%8F-%E8%BF%90%E7%AE%97%E7%AC%A6/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '2.变量&运算符',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.1"></head><body><div class="bg-animation" id="web_bg" style="background-image: url(/./assets/images/elaina/elaina2.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/./assets/images/elaina/elaina10.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> Gallery</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/./assets/images/elaina/elaina2.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/./assets/images/elaina/elaina3.jpg" alt="Logo"><span class="site-name">Elaina-boom</span></a><a class="nav-page-title" href="/"><span class="site-name">2.变量&amp;运算符</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> Gallery</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">2.变量&amp;运算符</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-03-31T07:41:09.486Z" title="发表于 2026-03-31 15:41:09">2026-03-31</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-03-31T07:52:41.709Z" title="更新于 2026-03-31 15:52:41">2026-03-31</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="变量-运算符"><a href="#变量-运算符" class="headerlink" title="变量&amp;运算符"></a>变量&amp;运算符</h1><h2 id="1-变量"><a href="#1-变量" class="headerlink" title="1 变量"></a>1 变量</h2><h3 id="1-1-变量概述"><a href="#1-1-变量概述" class="headerlink" title="1.1 变量概述"></a>1.1 变量概述</h3><p>在程序执行过程中，在<strong>某个范围内</strong>其值可以发生<strong>改变</strong>的量</p>
+<p>从本质上讲，变量是内存中储存数据的一块区域。</p>
+<p>定义格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">数据类型 变量名 = 字面量值;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-标识符"><a href="#1-2-标识符" class="headerlink" title="1.2 标识符"></a>1.2 标识符</h3><p>作用:</p>
+<ul>
+<li>给包、类、方法、变量等起名字的</li>
+</ul>
+<p>组成规则(硬性规定):</p>
+<ul>
+<li>由字符,下划线_,美元符$组成</li>
+<li>这里的字符采用的是Unicode字符集，包含英文大小写字母，中文字符，数字字符等。符号只有两个</li>
+</ul>
+<p>注意事项(硬性规定):</p>
+<ul>
+<li>不能以数字开头</li>
+<li>不能是java中的关键字</li>
+</ul>
+<p>命名规则(建议):</p>
+<ul>
+<li><p>基本要求</p>
+<ul>
+<li>见名知意</li>
+</ul>
+</li>
+<li><p>常见命名规则</p>
+<ul>
+<li>类名:每一个单词的首字母都大写</li>
+<li>变量或者方法:如果只有一个单词，全部小写，如果有多个单词，从第二个单词开始首字母大写<ul>
+<li>age  name    getMaxAge</li>
+</ul>
+</li>
+<li>包(包其实就是文件夹)名:全部小写，使用公司域名的反写<ul>
+<li>多个包用.隔开</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>常量名: 全部用大写字母，多个单词之间用_隔开</p>
+<ul>
+<li>层级展示包结构</li>
+</ul>
+<p><img src="/assets/image-20260317154010020.png" alt="image-20260317154010020"></p>
+<h3 id="1-3-数据类型"><a href="#1-3-数据类型" class="headerlink" title="1.3 数据类型"></a>1.3 数据类型</h3><h4 id="1-3-1-计算机存储单元"><a href="#1-3-1-计算机存储单元" class="headerlink" title="1.3.1 计算机存储单元"></a>1.3.1 计算机存储单元</h4><p>无论是内存还是硬盘，计算机存储设备的<strong>最小信息单元</strong>叫位(bit),也称之为比特位。通常用小写字母b表示。而计算机<strong>最小的存储单元</strong>叫字节(byte),通常用大写字母B表示.字节是由连续的8个位组成。</p>
+<p>1B &#x3D; 8b</p>
+<p>1KB &#x3D; 1024B</p>
+<p>1MB &#x3D; 1024KB</p>
+<p>1GB &#x3D;1024MB</p>
+<p>1TB &#x3D; 1024GB</p>
+<p>1PB &#x3D; 1024TB</p>
+<p>1EB &#x3D; 1024PB</p>
+<p>1ZB &#x3D; 1024EB</p>
+<h4 id="1-3-2-数据类型"><a href="#1-3-2-数据类型" class="headerlink" title="1.3.2 数据类型"></a>1.3.2 数据类型</h4><p>在java中，数据类型分为两大类:基本数据类型和引用数据类型</p>
+<p>基本数据类型分为四类八种</p>
+<table>
+<thead>
+<tr>
+<th>四类</th>
+<th>八种</th>
+<th>字节数</th>
+<th>数据表示范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>整型</td>
+<td>byte</td>
+<td>1</td>
+<td>-128 ~ 127</td>
+</tr>
+<tr>
+<td>整型</td>
+<td>short</td>
+<td>2</td>
+<td>-32768 ~ 32767</td>
+</tr>
+<tr>
+<td>整型</td>
+<td>int(默认)</td>
+<td>4</td>
+<td>-2 ^ 31  ~  2 ^ 31 - 1</td>
+</tr>
+<tr>
+<td>整型</td>
+<td>long</td>
+<td>8</td>
+<td>-2 ^ 63  ~ 2 ^ 63 - 1</td>
+</tr>
+<tr>
+<td>浮点型</td>
+<td>float</td>
+<td>4</td>
+<td>-3.403E38 ~ 3.403E38</td>
+</tr>
+<tr>
+<td>浮点型</td>
+<td>double(默认)</td>
+<td>8</td>
+<td>-1.798E308 ~ 1.798E308</td>
+</tr>
+<tr>
+<td>字符型</td>
+<td>char</td>
+<td>2</td>
+<td>0 - 65535</td>
+</tr>
+<tr>
+<td>布尔型</td>
+<td>boolean</td>
+<td>1</td>
+<td>true  false</td>
+</tr>
+</tbody></table>
+<p>long类型定义时需要在数字后面添加l或者L,建议使用L</p>
+<p>float类型定义时需要在数字后面添加f或者F，建议使用F</p>
+<h4 id="1-3-3-基本数据类型变量声明和使用"><a href="#1-3-3-基本数据类型变量声明和使用" class="headerlink" title="1.3.3 基本数据类型变量声明和使用"></a>1.3.3 基本数据类型变量声明和使用</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 整型</span></span><br><span class="line">        <span class="comment">// byte</span></span><br><span class="line">        <span class="type">byte</span> <span class="variable">num1</span> <span class="operator">=</span> <span class="number">127</span>;</span><br><span class="line">        System.out.println(num1);</span><br><span class="line">        <span class="comment">// short</span></span><br><span class="line">        <span class="type">short</span> <span class="variable">num2</span> <span class="operator">=</span> <span class="number">20000</span>;</span><br><span class="line">        System.out.println(num2);</span><br><span class="line">        <span class="comment">// int</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">num3</span> <span class="operator">=</span> <span class="number">1400000000</span>;</span><br><span class="line">        System.out.println(num3);</span><br><span class="line">        <span class="comment">// long</span></span><br><span class="line">        <span class="type">long</span> <span class="variable">num4</span> <span class="operator">=</span> <span class="number">8000000000L</span>;</span><br><span class="line">        System.out.println(num4);</span><br><span class="line">        <span class="comment">// float</span></span><br><span class="line">        <span class="type">float</span> <span class="variable">num5</span> <span class="operator">=</span> <span class="number">3.14F</span>;</span><br><span class="line">        System.out.println(num5);</span><br><span class="line">        <span class="comment">// double</span></span><br><span class="line">        <span class="type">double</span> <span class="variable">num6</span> <span class="operator">=</span> <span class="number">5465.6765</span>;</span><br><span class="line">        System.out.println(num6);</span><br><span class="line">        <span class="comment">// char</span></span><br><span class="line">        <span class="type">char</span> <span class="variable">c</span> <span class="operator">=</span> <span class="string">&#x27;中&#x27;</span>;</span><br><span class="line">        System.out.println(c);</span><br><span class="line">        <span class="comment">// boolean</span></span><br><span class="line">        <span class="type">boolean</span> <span class="variable">b</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line">        System.out.println(b);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 在JDK7以后，可以在数字中加_  增强可读性</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">num7</span> <span class="operator">=</span> <span class="number">10_000_000</span>;</span><br><span class="line">        System.out.println(num7);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-3-4-变量的注意事项"><a href="#1-3-4-变量的注意事项" class="headerlink" title="1.3.4 变量的注意事项"></a>1.3.4 变量的注意事项</h4><ul>
+<li>变量如果没有进行赋值，是不可以直接使用的</li>
+<li>变量只有在自己所属的作用域之内才有效，出了作用域之后就不能使用了<ul>
+<li>作用域:从变量定义的那一行开始，到所在的大括号结束为止</li>
+</ul>
+</li>
+<li>一行当中可以一次性定义多个相同数据类型的变量并赋值</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">		&#123;</span><br><span class="line">            <span class="comment">// 声明一个变量a,如果只是声明变量，没有默认值</span></span><br><span class="line">            <span class="type">int</span> a;</span><br><span class="line">            a = <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//        System.out.println(a);</span></span><br><span class="line"><span class="comment">//        int x,y,z;</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">10</span>,y = <span class="number">20</span>,z = <span class="number">30</span>;</span><br><span class="line">        System.out.println(x);</span><br><span class="line">        System.out.println(y);</span><br><span class="line">        System.out.println(z);</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-3-5-类型转换"><a href="#1-3-5-类型转换" class="headerlink" title="1.3.5 类型转换"></a>1.3.5 类型转换</h4><p>当类型不一致的时候，需要进行类型转换</p>
+<p>boolean类型不能转换</p>
+<p>类型转换分为:</p>
+<ul>
+<li>自动(隐式)类型转换<ul>
+<li>由范围<strong>小</strong>的数据类型转换成范围<strong>大</strong>的数据类型</li>
+<li>特点:代码不需要特殊处理，系统自动完成</li>
+<li>任何一个整型都可以赋值给浮点型变量，但是可能会出现精度损失!</li>
+</ul>
+</li>
+<li>强制(显式)类型转换<ul>
+<li>由范围<strong>大</strong>的数据类型转换成范围<strong>小</strong>的数据类型</li>
+<li>特点:代码需要特殊处理，否则编译不通过</li>
+<li>格式: 范围小的数据类型 变量名 &#x3D; (范围小的数据类型)范围大的数据类型的值;</li>
+<li>强制类型转换可能会出现精度损失!</li>
+<li>把浮点型转换成整型时，需要强制类型转换。当小数转换成整数时，不是四舍五入，是直接舍弃掉小数部分。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 自动(隐式)类型转换</span></span><br><span class="line">        <span class="comment">// long(大) = int(小)</span></span><br><span class="line">        <span class="type">long</span> <span class="variable">num1</span> <span class="operator">=</span> <span class="number">100</span>;</span><br><span class="line">        System.out.println(num1);</span><br><span class="line">        <span class="comment">// double(大) = float(小)</span></span><br><span class="line">        <span class="type">double</span> <span class="variable">num2</span> <span class="operator">=</span> <span class="number">3.14F</span>;</span><br><span class="line">        System.out.println(num2);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 强制(显式)类型转换</span></span><br><span class="line">        <span class="comment">// int(小) = long(大)</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">num3</span> <span class="operator">=</span> (<span class="type">int</span>)<span class="number">1000L</span>;</span><br><span class="line">        System.out.println(num3);</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">num4</span> <span class="operator">=</span> (<span class="type">int</span>)<span class="number">5000000000L</span>;</span><br><span class="line">        System.out.println(num4);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 任何一个整型都可以赋值给浮点型变量，但是可能会出现精度损失!</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">num5</span> <span class="operator">=</span> <span class="number">1000000345</span>;</span><br><span class="line">        <span class="type">float</span> <span class="variable">f</span> <span class="operator">=</span> num5;</span><br><span class="line">        System.out.println(f);</span><br><span class="line"></span><br><span class="line">        <span class="type">double</span> <span class="variable">d</span> <span class="operator">=</span> <span class="number">3.99</span>;</span><br><span class="line">        <span class="comment">// alt + 回车  自动提醒</span></span><br><span class="line">        <span class="comment">// 把浮点型转换成整型时，需要强制类型转换。当小数转换成整数时，不是四舍五入，是直接舍弃掉小数部分。</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">num6</span> <span class="operator">=</span> (<span class="type">int</span>) d;</span><br><span class="line">        System.out.println(num6);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="1-3-6-补充"><a href="#1-3-6-补充" class="headerlink" title="1.3.6 补充"></a>1.3.6 补充</h4><ul>
+<li>对于byte&#x2F;short&#x2F;char来说，在运算时会先提升为int类型再进行计算</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="number">1</span> + <span class="number">1</span>);</span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        System.out.println(a + <span class="number">1</span>);</span><br><span class="line">        <span class="comment">// 字符也可以运算</span></span><br><span class="line">        <span class="type">char</span> <span class="variable">ch1</span> <span class="operator">=</span> <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">        System.out.println(ch1 + <span class="number">1</span>);</span><br><span class="line">        <span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> ch1;</span><br><span class="line">        System.out.println(b);</span><br><span class="line">        <span class="comment">// 对于byte/short/char来说，在运算时会先提升为int类型再进行计算</span></span><br><span class="line">        <span class="type">byte</span> <span class="variable">num1</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line"><span class="comment">//        byte num2 = 11;</span></span><br><span class="line"><span class="comment">//        byte num2 = 10 + 1;</span></span><br><span class="line">        <span class="comment">// byte(小) = int(大)</span></span><br><span class="line">        <span class="type">byte</span> <span class="variable">num2</span> <span class="operator">=</span> (<span class="type">byte</span>)(num1 + <span class="number">1</span>);</span><br><span class="line">        System.out.println(num2);</span><br><span class="line">        </span><br><span class="line">        <span class="type">byte</span> <span class="variable">num3</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        <span class="type">short</span> <span class="variable">num4</span> <span class="operator">=</span> <span class="number">1000</span>;</span><br><span class="line">        <span class="comment">// short(小) = int(大)</span></span><br><span class="line">        <span class="type">short</span> <span class="variable">result</span> <span class="operator">=</span> (<span class="type">short</span>) (num3 + num4);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>对于char&#x2F;byte&#x2F;short来说，如果右侧没有超出范围，那么编译器会自动补全一个强制类型转换</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 对于char/byte/short来说，如果右侧没有超出范围，那么编译器会自动补全一个强制类型转换</span></span><br><span class="line">        <span class="comment">// byte(小) = int(大)</span></span><br><span class="line">        <span class="type">byte</span> <span class="variable">num1</span> <span class="operator">=</span> (<span class="type">byte</span>) <span class="number">128</span>;</span><br><span class="line">        System.out.println(num1);</span><br><span class="line">        <span class="type">char</span> <span class="variable">c</span> <span class="operator">=</span> <span class="number">98</span>;</span><br><span class="line">        System.out.println(c);</span><br><span class="line"><span class="comment">//        char c2 =  -1;// 编译不通过 因为-1超出了char类型的范围</span></span><br><span class="line"><span class="comment">//        System.out.println(c2);</span></span><br><span class="line">        <span class="comment">// 编译不通过</span></span><br><span class="line">        <span class="comment">// 编译是分开编译的。编译完short s = &#x27;b&#x27;,就把&#x27;b&#x27;以字符形式存在了内存中</span></span><br><span class="line">        <span class="type">short</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&#x27;b&#x27;</span>;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">        <span class="comment">// 编译完char ch1 = &#x27;b&#x27;,把&#x27;b&#x27;以字符形式存在了内存中</span></span><br><span class="line">        <span class="type">char</span> <span class="variable">ch1</span> <span class="operator">=</span> <span class="string">&#x27;b&#x27;</span>;</span><br><span class="line">        <span class="comment">// 由于是分开编译的，ch1是变量，jvm只能确定变量的类型是char，但是不能确定具体的值,就不能确定char类型是否在short类型的范围内，所以需要手动强转</span></span><br><span class="line">        <span class="type">short</span> <span class="variable">s2</span> <span class="operator">=</span> (<span class="type">short</span>) ch1;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-运算符"><a href="#2-运算符" class="headerlink" title="2 运算符"></a>2 运算符</h2><h3 id="2-1-运算符概述"><a href="#2-1-运算符概述" class="headerlink" title="2.1 运算符概述"></a>2.1 运算符概述</h3><p>对常量和变量进行操作的符号称之为运算符。</p>
+<p>用运算符把常量或者变量连接起来符合java语法的式子称之为表达式。 </p>
+<p>运算符分类:</p>
+<ul>
+<li>算术运算符</li>
+<li>赋值运算符</li>
+<li>关系运算符</li>
+<li>逻辑运算符</li>
+<li>三元运算符</li>
+<li>位运算符(以后再讲)</li>
+</ul>
+<h3 id="2-2-算术运算符"><a href="#2-2-算术运算符" class="headerlink" title="2.2 算术运算符"></a>2.2 算术运算符</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">+   加</span><br><span class="line">-   减</span><br><span class="line">*   乘</span><br><span class="line">/   除</span><br><span class="line">%   取余</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// + 加</span></span><br><span class="line">        <span class="comment">// 数字相加</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">20</span>;</span><br><span class="line">        System.out.println(a + b);</span><br><span class="line">        <span class="comment">// 字符相加  会把char类型提升为int类型再进行运算</span></span><br><span class="line">        <span class="type">char</span> <span class="variable">c</span> <span class="operator">=</span> <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">        System.out.println(c + <span class="number">1</span>);</span><br><span class="line">        <span class="comment">// 字符串拼接  任何类型和字符串相加，结果还是字符串</span></span><br><span class="line">        System.out.println(<span class="literal">true</span> + <span class="string">&quot;hello&quot;</span> + <span class="number">1</span> + <span class="number">2</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;最大值是:\t&quot;</span> + a);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// - 减</span></span><br><span class="line">        System.out.println(a - b);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// * 乘</span></span><br><span class="line">        System.out.println(a * b);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// / 除法  两个整数相除，结果一定是整数</span></span><br><span class="line">        System.out.println(a / b);</span><br><span class="line">        <span class="comment">// / 两端只要有一个是小数，那么结果就是小数</span></span><br><span class="line">        System.out.println(<span class="number">1.0</span> / <span class="number">2</span>);</span><br><span class="line">        System.out.println(<span class="number">1</span> / <span class="number">2.0</span>);</span><br><span class="line">        System.out.println(<span class="number">1.0</span> / <span class="number">2.0</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 抛出数学异常 ArithmeticException</span></span><br><span class="line"><span class="comment">//        System.out.println(1 / 0);</span></span><br><span class="line"><span class="comment">//        int i = 1 / 0;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// % 取余</span></span><br><span class="line">        System.out.println(a % b);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 以下知识了解</span></span><br><span class="line">        System.out.println(<span class="number">1.0</span> / <span class="number">0</span>);<span class="comment">// Infinity</span></span><br><span class="line">        System.out.println(-<span class="number">1.0</span> / <span class="number">0</span>);<span class="comment">// -Infinity</span></span><br><span class="line">        System.out.println(<span class="number">0.0</span> / <span class="number">0</span>);<span class="comment">// NaN   not a number  非数字</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 小数取余</span></span><br><span class="line">        System.out.println(<span class="number">2.1</span> % <span class="number">2</span>);</span><br><span class="line">        System.out.println(<span class="number">3</span> % <span class="number">1.4</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 负数取余  最终符号和%左边的符号相同</span></span><br><span class="line">        System.out.println(-<span class="number">5</span> % <span class="number">3</span>);</span><br><span class="line">        System.out.println(<span class="number">5</span> % -<span class="number">3</span>);</span><br><span class="line">        System.out.println(-<span class="number">5</span> % -<span class="number">3</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="自增自减运算符"><a href="#自增自减运算符" class="headerlink" title="自增自减运算符"></a>自增自减运算符</h4><p>自增运算符 ++</p>
+<p>自减运算符 –</p>
+<p>作用是对<strong>变量</strong>进行+1,或者-1的操作</p>
+<p>++(–)可以用在变量前面，也可以用在变量后面</p>
+<p>区别:</p>
+<ul>
+<li>对于单独使用，放在变量前面和后面没有任何区别</li>
+<li>对于混合使用<ul>
+<li>如果++(–)在变量前面，那么首先对变量自身进行+1(-1)的操作，然后根据+1(-1)的结果再进行其他操作</li>
+<li>如果++(–)在变量后面，那么先进行其他操作，再对变量自身进行+1(-1)的操作</li>
+</ul>
+</li>
+</ul>
+<p>课堂练习:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">4</span>;</span><br><span class="line">      <span class="comment">// a = x++  a = 4  x = 5</span></span><br><span class="line">      <span class="comment">// b = ++x  x = 6  b = 6</span></span><br><span class="line">      <span class="comment">// y = a + b</span></span><br><span class="line">      <span class="type">int</span> <span class="variable">y</span> <span class="operator">=</span> x++ + ++x;</span><br><span class="line">      System.out.println(x);<span class="comment">// 6</span></span><br><span class="line">      System.out.println(y);<span class="comment">// 10</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">4</span>;</span><br><span class="line">      <span class="comment">// a = ++x   x = 5  a = 5</span></span><br><span class="line">      <span class="comment">// b = x++;  b = 5  x = 6</span></span><br><span class="line">      <span class="comment">// y = a + b</span></span><br><span class="line">      <span class="type">int</span> <span class="variable">y</span> <span class="operator">=</span> ++x + x++;</span><br><span class="line">      System.out.println(x);<span class="comment">// 6</span></span><br><span class="line">      System.out.println(y);<span class="comment">// 10</span></span><br><span class="line">      </span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">num1</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        num1--;</span><br><span class="line">        System.out.println(num1);</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">num2</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        --num2;</span><br><span class="line">        System.out.println(num2);</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        System.out.println(a++);<span class="comment">// a + 1  sout(结果)</span></span><br><span class="line">        System.out.println(a);</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">num3</span> <span class="operator">=</span> <span class="number">100</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> ++num3 + <span class="number">1</span>;</span><br><span class="line">        System.out.println(num3);<span class="comment">// 101</span></span><br><span class="line">        System.out.println(result);<span class="comment">// 102</span></span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">30</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">c</span> <span class="operator">=</span> <span class="number">40</span>;</span><br><span class="line">        <span class="comment">// x = ++b  x = 31</span></span><br><span class="line">        <span class="comment">// y = c--  y = 40</span></span><br><span class="line">        <span class="comment">// int result2 = x + y;</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">result2</span> <span class="operator">=</span> ++b + c--;</span><br><span class="line">        System.out.println(b);<span class="comment">// 31</span></span><br><span class="line">        System.out.println(c);<span class="comment">// 39</span></span><br><span class="line">        System.out.println(result2);<span class="comment">// 71</span></span><br><span class="line">    </span><br><span class="line">    <span class="type">byte</span> <span class="variable">num4</span> <span class="operator">=</span> <span class="number">127</span>;</span><br><span class="line">        <span class="comment">// ++ -- 在进行运算后的类型和运算前相同，隐藏了一个强制类型转换</span></span><br><span class="line">        num4++;<span class="comment">// num4 = (byte)(num4 + 1);</span></span><br><span class="line">        System.out.println(num4);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-赋值运算符"><a href="#2-3-赋值运算符" class="headerlink" title="2.3 赋值运算符"></a>2.3 赋值运算符</h3><p>赋值运算符代表一个动作，将运算符右边的内容交给左边</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">=</span><br><span class="line">扩展:</span><br><span class="line">+=</span><br><span class="line">-=</span><br><span class="line">*=</span><br><span class="line">/=</span><br><span class="line">%=</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        System.out.println(a);</span><br><span class="line"></span><br><span class="line">        a += <span class="number">10</span>;<span class="comment">// a = a + 10;</span></span><br><span class="line">        System.out.println(a);</span><br><span class="line"></span><br><span class="line">        a -= <span class="number">10</span>;<span class="comment">// a = a - 10;</span></span><br><span class="line">        System.out.println(a);</span><br><span class="line"></span><br><span class="line">        a *= <span class="number">10</span>;<span class="comment">// a = a * 10</span></span><br><span class="line">        System.out.println(a);</span><br><span class="line"></span><br><span class="line">        a /= <span class="number">10</span>;<span class="comment">// a = a / 10</span></span><br><span class="line">        System.out.println(a);</span><br><span class="line"></span><br><span class="line">        a %= <span class="number">10</span>;<span class="comment">// a = a % 10</span></span><br><span class="line">        System.out.println(a);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 扩展的符号隐藏了一个强制类型转换</span></span><br><span class="line">        <span class="type">byte</span> <span class="variable">num1</span> <span class="operator">=</span> <span class="number">127</span>;</span><br><span class="line">        num1 += <span class="number">1</span>;<span class="comment">// num1 = (byte)(num1 + 1);</span></span><br><span class="line">        System.out.println(num1);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>课堂练习:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">4</span>;</span><br><span class="line">      <span class="comment">// java中的连等赋值</span></span><br><span class="line">      <span class="comment">// c = 4 += 4 -= 4 *= 4</span></span><br><span class="line">      <span class="type">int</span> <span class="variable">c</span> <span class="operator">=</span> b += b -= b *= b;</span><br><span class="line">      System.out.println(c);<span class="comment">// -8</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-4-关系运算符"><a href="#2-4-关系运算符" class="headerlink" title="2.4 关系运算符"></a>2.4 关系运算符</h3><p>关系运算符的结果都是boolean值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">==  相等</span><br><span class="line">!=  不相等</span><br><span class="line">&gt;   大于</span><br><span class="line">&gt;=  大于等于</span><br><span class="line">&lt;   小于</span><br><span class="line">&lt;=  小于等于</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">20</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">c</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        System.out.println(a == c);</span><br><span class="line">        System.out.println(a != b);</span><br><span class="line">        System.out.println(a &lt; b);</span><br><span class="line">        System.out.println(a &lt;= c);</span><br><span class="line">        System.out.println(a &gt; c);</span><br><span class="line">        System.out.println(a &gt;= c);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-5-逻辑运算符"><a href="#2-5-逻辑运算符" class="headerlink" title="2.5 逻辑运算符"></a>2.5 逻辑运算符</h3><p>逻辑运算符的表达式连接的都是boolean类型</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">与(且)   &amp;   全部都是true，结果才是true。只要有一个是false，结果就是false</span><br><span class="line"></span><br><span class="line">或       |   只要有一个是true，结果就是true。全部是false，结果才是false</span><br><span class="line"></span><br><span class="line">异或     ^   相同就是false，不同就是true</span><br><span class="line"></span><br><span class="line">非       !   如果是true，结果就是false。如果是false，结果就是true</span><br></pre></td></tr></table></figure>
+
+<p>与 或 异或都可以连接多个表达式，!只能连接一个</p>
+<p>&amp;&amp;(||)具有短路效果:</p>
+<p>&amp;&amp;(||)和&amp;(|)在结果上是完全一样的，只是&amp;&amp;(||)执行效率更高。</p>
+<p><strong>如果左边的结果已经能够确定整个表达式的最终结果，那么右边的代码都不会再执行</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">20</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">c</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        <span class="comment">// true &amp; false &amp; true</span></span><br><span class="line">        System.out.println((a == c) &amp; (a &lt; c) &amp; (b &gt; c));</span><br><span class="line">        <span class="comment">// true | false</span></span><br><span class="line">        System.out.println(a &lt; b | a &gt; c);</span><br><span class="line">        <span class="comment">// true &amp; true</span></span><br><span class="line">        System.out.println((a == c) ^ (b &gt; c) | (a &lt; b) &amp; (a == c));</span><br><span class="line"></span><br><span class="line">        System.out.println(!(a &gt; c));</span><br><span class="line"></span><br><span class="line">        System.out.println((a == c) &amp;&amp; (b &lt; c));</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">100</span>;</span><br><span class="line">        System.out.println(<span class="number">3</span> &gt; <span class="number">4</span> &amp;&amp; ++x &lt; <span class="number">1000</span>);<span class="comment">// 左边的 3 &gt; 4 已经能够确定最终的结果是false,右边的++x &lt; 1000 就没有执行</span></span><br><span class="line">        System.out.println(x);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-6-三元运算符"><a href="#2-6-三元运算符" class="headerlink" title="2.6 三元运算符"></a>2.6 三元运算符</h3><p>三元运算符就是有三个元素参与的运算</p>
+<p>格式:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">数据类型 变量名 = 布尔表达式 ? 表达式A : 表达式B;</span><br></pre></td></tr></table></figure>
+
+<p>如果布尔表达式的结果是true，会将表达式A的结果赋值给左边变量</p>
+<p>如果布尔表达式的结果是false，会将表达式B的结果赋值给左边变量</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 三元运算符</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">row</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        System.out.println(row &gt; <span class="number">0</span> ? <span class="string">&quot;success&quot;</span> : <span class="string">&quot;error&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">30</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">20</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">c</span> <span class="operator">=</span> <span class="number">40</span>;</span><br><span class="line">        <span class="comment">// 求a b c的最大值</span></span><br><span class="line">        <span class="comment">// 获取a b的最大值</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">max1</span> <span class="operator">=</span> (a &gt; b) ? a : b;</span><br><span class="line">        <span class="comment">// 把a b的最大值max1 和c进行比较</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> (max1 &gt; c) ? max1 : c;</span><br><span class="line">        System.out.println(<span class="string">&quot;最大值是:&quot;</span> + max);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="idea启动卡住的Bug解决"><a href="#idea启动卡住的Bug解决" class="headerlink" title="idea启动卡住的Bug解决"></a>idea启动卡住的Bug解决</h3><p>shift+shift 全局搜索 Registry</p>
+<p><img src="/assets/image-20260317114434832.png" alt="image-20260317114434832"></p>
+<p><img src="/assets/image-20260317114534003.png" alt="image-20260317114534003"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://elainaboom.github.io">Elaina-boom</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://elainaboom.github.io/2026/03/31/2-%E5%8F%98%E9%87%8F-%E8%BF%90%E7%AE%97%E7%AC%A6/">http://elainaboom.github.io/2026/03/31/2-%E5%8F%98%E9%87%8F-%E8%BF%90%E7%AE%97%E7%AC%A6/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://elainaboom.github.io" target="_blank">Elaina-boom</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/./assets/images/elaina/elaina10.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/03/31/1-Java%E5%85%A5%E9%97%A8/" title="1.Java入门"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">1.Java入门</div></div><div class="info-2"><div class="info-item-1">Java入门1 软件介绍 系统软件 windows macOS Linux    安卓 鸿蒙 iOS   应用软件 微信 支付宝 qq steam wegame    2 Java介绍java是软件开发中的高级编程语言 机器语言:1010101010101010101        执行效率高    开发效率低 汇编语言 高级语言:Java、C、Object-C、C++、swift、C#、python…  Java之父是詹姆斯高斯林 java是1995年5月23日在SUN公司开发出来的 2004年,JDK1.5发布(JavaSE、JavaME、JavaEE) 2009年，甲骨文(oracle)以75亿美元收购sun公司 2014年，javaSE8.0发布 2018年，javaSE11发布  3 Java语言平台概述3.1 Java平台介绍 javaSE java语言的标准版,是java语言的核心。可以做一些桌面应用程序。   javaME java语言的小型版,是为开发一些电子设备产品和嵌入式设备提供的方案。   javaEE java语言的企业版，为企业开发环境下的应用程序提供...</div></div></div></a><a class="pagination-related" href="/2026/03/31/3-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5/" title="3.流程控制语句"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">3.流程控制语句</div></div><div class="info-2"><div class="info-item-1">流程控制语句练习题1234567891011121314151617181920212223242526272829303132333435363738394041public static void main(String[] args) &#123;//        1.求⼀光年是多少千⽶ , 光在真空中传播速度299792458 m/s        int speed = 299792458;        long distance = speed * 365L * 24 * 60 * 60 / 1000;        System.out.println(distance);//        2.根据天数（46）计算周数和剩余的天数        int totalDay = 46;        int weekNum = totalDay / 7;        int leftDay = totalDay % 7;        System.out.println(&quot;周数是:&quot; + weekNum);        System.ou...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/./assets/images/elaina/elaina10.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Elaina-boom</div><div class="author-info-description">Can you see me?</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%98%E9%87%8F-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.</span> <span class="toc-text">变量&amp;运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%8F%98%E9%87%8F"><span class="toc-number">1.1.</span> <span class="toc-text">1 变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%8F%98%E9%87%8F%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1 变量概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2 标识符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.3 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%98%E5%82%A8%E5%8D%95%E5%85%83"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">1.3.1 计算机存储单元</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-2-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">1.3.2 数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-3-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="toc-number">1.1.3.3.</span> <span class="toc-text">1.3.3 基本数据类型变量声明和使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-4-%E5%8F%98%E9%87%8F%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.1.3.4.</span> <span class="toc-text">1.3.4 变量的注意事项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-5-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.1.3.5.</span> <span class="toc-text">1.3.5 类型转换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-6-%E8%A1%A5%E5%85%85"><span class="toc-number">1.1.3.6.</span> <span class="toc-text">1.3.6 补充</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.2.</span> <span class="toc-text">2 运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E8%BF%90%E7%AE%97%E7%AC%A6%E6%A6%82%E8%BF%B0"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 运算符概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 算术运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%A2%9E%E8%87%AA%E5%87%8F%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">自增自减运算符</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3 赋值运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.2.4.</span> <span class="toc-text">2.4 关系运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.2.5.</span> <span class="toc-text">2.5 逻辑运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-%E4%B8%89%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.2.6.</span> <span class="toc-text">2.6 三元运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#idea%E5%90%AF%E5%8A%A8%E5%8D%A1%E4%BD%8F%E7%9A%84Bug%E8%A7%A3%E5%86%B3"><span class="toc-number">1.2.7.</span> <span class="toc-text">idea启动卡住的Bug解决</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/31/API/" title="7.API">7.API</a><time datetime="2026-03-31T07:49:35.567Z" title="发表于 2026-03-31 15:49:35">2026-03-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/31/1-Java%E5%85%A5%E9%97%A8/" title="1.Java入门">1.Java入门</a><time datetime="2026-03-31T07:41:11.251Z" title="发表于 2026-03-31 15:41:11">2026-03-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/31/2-%E5%8F%98%E9%87%8F-%E8%BF%90%E7%AE%97%E7%AC%A6/" title="2.变量&amp;运算符">2.变量&amp;运算符</a><time datetime="2026-03-31T07:41:09.486Z" title="发表于 2026-03-31 15:41:09">2026-03-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/31/3-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5/" title="3.流程控制语句">3.流程控制语句</a><time datetime="2026-03-31T07:41:07.540Z" title="发表于 2026-03-31 15:41:07">2026-03-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/31/5-%E6%95%B0%E7%BB%84/" title="5.数组">5.数组</a><time datetime="2026-03-31T07:41:06.334Z" title="发表于 2026-03-31 15:41:06">2026-03-31</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/./assets/images/elaina/elaina2.jpg);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Elaina-boom</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="12357158" data-server="netease" data-type="artist" data-fixed="true" data-autoplay="true" data-lrcType="-1"> </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/metingjs/dist/Meting.min.js"></script><script>(() => {
+  const destroyAplayer = () => {
+    if (window.aplayers) {
+      for (let i = 0; i < window.aplayers.length; i++) {
+        if (!window.aplayers[i].options.fixed) {
+          window.aplayers[i].destroy()
+        }
+      }
+    }
+  }
+
+  const runMetingJS = () => {
+    typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+  }
+
+  btf.addGlobalFn('pjaxSend', destroyAplayer, 'destroyAplayer')
+  btf.addGlobalFn('pjaxComplete', loadMeting, 'runMetingJS')
+})()</script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js" defer="defer"></script><script>document.addEventListener('DOMContentLoaded', () => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      false
+        ? pjax.loadUrl('/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

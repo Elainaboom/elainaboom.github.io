@@ -1,0 +1,348 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>4.方法 | Elaina-boom</title><meta name="author" content="Elaina-boom"><meta name="copyright" content="Elaina-boom"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="方法1 方法的概述方法本质上就是一个有名称的代码块，进去的数据是参数，出来的数据是返回值 方法的格式: 1234修饰符 返回值类型 方法名称(参数类型 参数名称,参数类型 参数名称....)&#123;	方法体;	return 返回值;&#125;  解释:  修饰符：目前先记住是public static 返回值类型:经过方法的代码，最终返回的结果值的数据类型。可以是基本数据类型，也可以是引用数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="4.方法">
+<meta property="og:url" content="http://elainaboom.github.io/2026/03/31/4-%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="Elaina-boom">
+<meta property="og:description" content="方法1 方法的概述方法本质上就是一个有名称的代码块，进去的数据是参数，出来的数据是返回值 方法的格式: 1234修饰符 返回值类型 方法名称(参数类型 参数名称,参数类型 参数名称....)&#123;	方法体;	return 返回值;&#125;  解释:  修饰符：目前先记住是public static 返回值类型:经过方法的代码，最终返回的结果值的数据类型。可以是基本数据类型，也可以是引用数">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://elainaboom.github.io/assets/images/elaina/elaina10.jpg">
+<meta property="article:published_time" content="2026-03-31T07:41:04.811Z">
+<meta property="article:modified_time" content="2026-03-31T08:03:31.383Z">
+<meta property="article:author" content="Elaina-boom">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://elainaboom.github.io/assets/images/elaina/elaina10.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "4.方法",
+  "url": "http://elainaboom.github.io/2026/03/31/4-%E6%96%B9%E6%B3%95/",
+  "image": "http://elainaboom.github.io/assets/images/elaina/elaina10.jpg",
+  "datePublished": "2026-03-31T07:41:04.811Z",
+  "dateModified": "2026-03-31T08:03:31.383Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Elaina-boom",
+      "url": "http://elainaboom.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://elainaboom.github.io/2026/03/31/4-%E6%96%B9%E6%B3%95/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '4.方法',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.1"></head><body><div class="bg-animation" id="web_bg" style="background-image: url(/./assets/images/elaina/elaina2.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/./assets/images/elaina/elaina10.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> Gallery</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/./assets/images/elaina/elaina2.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/./assets/images/elaina/elaina3.jpg" alt="Logo"><span class="site-name">Elaina-boom</span></a><a class="nav-page-title" href="/"><span class="site-name">4.方法</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> Gallery</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">4.方法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-03-31T07:41:04.811Z" title="发表于 2026-03-31 15:41:04">2026-03-31</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-03-31T08:03:31.383Z" title="更新于 2026-03-31 16:03:31">2026-03-31</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><h2 id="1-方法的概述"><a href="#1-方法的概述" class="headerlink" title="1 方法的概述"></a>1 方法的概述</h2><p>方法本质上就是一个有名称的代码块，进去的数据是参数，出来的数据是返回值</p>
+<p>方法的格式:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">修饰符 返回值类型 方法名称(参数类型 参数名称,参数类型 参数名称....)&#123;</span><br><span class="line">	方法体;</span><br><span class="line">	<span class="keyword">return</span> 返回值;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>解释:</p>
+<ul>
+<li>修饰符：目前先记住是public static</li>
+<li>返回值类型:经过方法的代码，最终返回的结果值的数据类型。可以是基本数据类型，也可以是引用数据类型。</li>
+<li>方法名称: 就是自定义的方法的标识符(和定义变量的规则是一样的)  </li>
+<li>参数类型: 传入方法中的数据类型(相当于一个变量的数据类型)</li>
+<li>参数名称:参数的标识符，相当于一个变量的名称</li>
+<li>方法体:方法中的具体代码</li>
+<li>return:是java中的关键字。会立即结束方法的执行，并且将最终的结果返回到方法的调用处</li>
+<li>返回值:方法的最终的结果</li>
+</ul>
+<p>注意事项:</p>
+<ul>
+<li><p>方法是不能嵌套的，方法的定义应该在类中，方法外</p>
+</li>
+<li><p>方法如果没有调用，是不会执行的</p>
+</li>
+<li><p>方法定义的位置和执行的顺序无关</p>
+</li>
+</ul>
+<p>方法调用的格式:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">方法名(参数);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 调用方法，接收方法的返回值</span></span><br><span class="line">        <span class="comment">// 方法的返回值在哪一行调用就返回到哪一行</span></span><br><span class="line">       <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span>  getSum(<span class="number">20</span>,<span class="number">40</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;sum = &quot;</span> + sum);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 在类中，方法外定义方法</span></span><br><span class="line">    <span class="comment">// 定义一个求和方法，求两个整数的和</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getSum</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;HelloWorld&quot;</span>);</span><br><span class="line">        <span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> a + b;</span><br><span class="line">        System.out.println(result);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-void"><a href="#2-void" class="headerlink" title="2 void"></a>2 void</h2><p>如果方法不需要返回值，返回值类型可以是void。void的方法return后面不需要写内容，return也可以省略。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义方法，打印10次Hello World</span></span><br><span class="line">    <span class="comment">// void代表虚无，就是方法没有返回值</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">printHello</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;HelloWorld&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">playGame</span><span class="params">(<span class="type">int</span> age)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (age &lt; <span class="number">0</span> || age &gt; <span class="number">120</span>)&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;年龄不对&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (age &gt;= <span class="number">18</span>)&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;可以无限玩游戏&quot;</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;防沉迷&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>课堂练习:</p>
+<ul>
+<li>判断一个数是否是奇数</li>
+<li>比较两个整数是否相等</li>
+<li>求三个整数的最大值</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义方法，判断一个数是否是奇数</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">isOdd</span><span class="params">(<span class="type">int</span> a)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a % <span class="number">2</span> != <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 定义方法，比较两个整数是否相等</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span>&#123;</span><br><span class="line"><span class="comment">//        if (a == b)&#123;</span></span><br><span class="line"><span class="comment">//            return true;</span></span><br><span class="line"><span class="comment">//        &#125;else &#123;</span></span><br><span class="line"><span class="comment">//            return false;</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line">        <span class="keyword">return</span> a == b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 定义方法,求三个整数的最大值</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getMax</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b,<span class="type">int</span> c)</span>&#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">max1</span> <span class="operator">=</span> (a &gt; b) ? a : b;</span><br><span class="line">        <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> (c &gt; max1) ? c : max1;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-重载-Overload"><a href="#3-重载-Overload" class="headerlink" title="3 重载(Overload)"></a>3 重载(Overload)</h2><p>在一个类中，出现了方法名相同但是参数列表不同的方法，就称之为方法的重载。</p>
+<p><strong>方法的重载和参数名称无关，和返回值类型无关</strong></p>
+<p><strong>本质上就是只要方法在调用的时候能够区分开，就可以重载。</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        getSum(<span class="number">10</span>,<span class="number">20.0</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 定义求和方法</span></span><br><span class="line">    <span class="comment">// getSum(int,int)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getSum</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a + b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// getSum(int,int)</span></span><br><span class="line"><span class="comment">//    public static void getSum(int a,int b)&#123;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">getSum</span><span class="params">(<span class="type">int</span> a,<span class="type">double</span> b)</span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// getSum(int,int,int)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getSum</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b,<span class="type">int</span> c)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a + b + c;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getSum</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b,<span class="type">int</span> c,<span class="type">int</span> d)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a + b + c + d;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-方法的参数传递问题"><a href="#4-方法的参数传递问题" class="headerlink" title="4 方法的参数传递问题"></a>4 方法的参数传递问题</h2><ul>
+<li>形式参数:在方法定义时，在小括号内的参数，也称之为形参</li>
+<li>实际参数:在方法调用时，传入小括号中的参数，也称之为实参</li>
+</ul>
+<p>对于基本数据类型(包含String),形参的改变不会影响实参</p>
+<p><img src="/assets/image-20260321110632579.png" alt="image-20260321110632579"></p>
+<p>对于引用数据类型(排除String),形参的改变会影响实参</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] arr = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line">        changeRef(arr);</span><br><span class="line">        System.out.println(Arrays.toString(arr));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">changeRef</span><span class="params">(<span class="type">int</span>[] arr)</span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">            arr[i] *= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="5-方法的递归"><a href="#5-方法的递归" class="headerlink" title="5 方法的递归"></a>5 方法的递归</h2><p>方法调用自身</p>
+<p>方法的递归需要给一个出口，否则会出现StackOverflowError</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 递归定义 求1-n的和</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getSum</span><span class="params">(<span class="type">int</span> n)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> n + getSum(n - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="6-全局变量"><a href="#6-全局变量" class="headerlink" title="6 全局变量"></a>6 全局变量</h2><p>在类中方法外定义变量，使用public static修饰，今天可以先称之为全局变量，类中的所有的方法共用一个全局变量</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestDemo6</span> &#123;</span><br><span class="line">    <span class="comment">// 全局变量  可以在类中的所有的方法中使用</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">Scanner</span> <span class="variable">scanner</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        a += <span class="number">20</span>;</span><br><span class="line"><span class="comment">//        scanner.next();</span></span><br><span class="line">        test1();</span><br><span class="line">        test2();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">test1</span><span class="params">()</span>&#123;</span><br><span class="line"><span class="comment">//        scanner.nextInt();</span></span><br><span class="line">        System.out.println(a);</span><br><span class="line">        a *= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">test2</span><span class="params">()</span>&#123;</span><br><span class="line"><span class="comment">//        scanner.nextInt();</span></span><br><span class="line">        System.out.println(a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="7-文档注释"><a href="#7-文档注释" class="headerlink" title="7 文档注释"></a>7 文档注释</h2><p>就是给变量，方法，类注释的内容。注释会出现在java的文档中.</p>
+<p>格式:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/**注释内容*/</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>配置类的开头信息</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@className</span>: $&#123;NAME&#125;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span>: $&#123;DATE&#125; $&#123;TIME&#125;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> :gfs</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> :1.0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> :jdk17</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="/assets/image-20260321114509663.png" alt="image-20260321114509663"></p>
+<ul>
+<li>生成java文档</li>
+</ul>
+<p><img src="/assets/image-20260321114657519.png" alt="image-20260321114657519"></p>
+<p><img src="/assets/image-20260321114834156.png" alt="image-20260321114834156"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.javasm.demo;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> :gfs</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> :1.0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@className</span>: TestDemo8</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span>: 2026/3/21 11:45</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 这是测试的</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> :jdk17</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestDemo8</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 这是程序的入口</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> args 启动时的参数</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 打印hello</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> n 打印的遍数</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 瞎写的</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">printHello</span><span class="params">(<span class="type">int</span> n)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>作业: 使用递归(了解)</p>
+<p>汉诺塔问题:这个问题来源于印度的一个传说。有3个金刚石塔，分别是ABC，第一个(A)金刚石塔上面从小到大摆放着64个黄金圆盘。现在要把黄金圆盘从A移动到C塔上，一次只能移动一个，并且大圆盘不能摆放在小圆盘上面。要求在控制台打印出64个黄金圆盘的完美的移动轨迹。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 汉诺塔问题</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> n 代表圆盘的数量</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> A 要移动圆盘的柱子</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> B 辅助的柱子</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> C 圆盘要移动到的柱子</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">hanio</span><span class="params">(<span class="type">int</span> n,<span class="type">char</span> A,<span class="type">char</span> B,<span class="type">char</span> C)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">1</span>)&#123;<span class="comment">// 程序的出口</span></span><br><span class="line">            System.out.println(A + <span class="string">&quot; -&gt; &quot;</span> + C);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 第一步:把n - 1个圆盘从A移动到B，C是辅助的柱子</span></span><br><span class="line">            hanio(n - <span class="number">1</span>,A,C,B);</span><br><span class="line">            <span class="comment">// 第二步:把最大的圆盘从A移动到C</span></span><br><span class="line">            System.out.println(A + <span class="string">&quot; -&gt; &quot;</span> + C);</span><br><span class="line">            <span class="comment">// 第三步:把n - 1个圆盘从B移动到C，A是辅助的柱子</span></span><br><span class="line">            hanio(n - <span class="number">1</span>,B,A,C);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://elainaboom.github.io">Elaina-boom</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://elainaboom.github.io/2026/03/31/4-%E6%96%B9%E6%B3%95/">http://elainaboom.github.io/2026/03/31/4-%E6%96%B9%E6%B3%95/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://elainaboom.github.io" target="_blank">Elaina-boom</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/./assets/images/elaina/elaina10.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/03/31/5-%E6%95%B0%E7%BB%84/" title="5.数组"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">5.数组</div></div><div class="info-2"><div class="info-item-1">数组1 数组的基本使用数组是装着相同数据类型变量的容器,容器中的每一个变量称之为元素(element)  数组的声明  格式：  数据类型[] 数组名称; 数据类型 数组名称[]; 1234567891011121314151617181920  - 数组如果只是声明，没有初始化是不能使用的- 数组的初始化  - 动态初始化:在初始化的时候指定数组的长度，系统根据长度为每一个元素赋予一个初始的默认值    - 数据类型[] 数组名称 = new 数据类型[m];      - 数据类型:表示数组中每一个元素的类型,可以是基本数据类型，也可以是引用数据类型      - []:代表是一个数组      - 数组名称:就是数组的标识符      - new:开辟内存空间      - m:数组的长度，也就是数组可以存储几个数据  - 静态初始化:在初始化的时候，直接告诉数组当中都需要存储哪些内容，系统根据内容的数量计算出数组的长度    - 完整格式:     - ```      数据类型[] 数组名称 = new 数据类型[]&#123;元素值1,元素值2,...元素值n&#12...</div></div></div></a><a class="pagination-related" href="/2026/03/31/6-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="6.面向对象"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">6.面向对象</div></div><div class="info-2"><div class="info-item-1">面向对象1 面向对象思想概述以前的代码每一个具体的步骤我们都是参与者，并且需要面对具体的每一个步骤和过程，这就是面向过程最直接的体现。 面向过程的代表语言是C语言。 把上面的步骤和功能进行封装，功能类似的封装在一起，这样代码的结构就清晰很多，找到对应的类就可以使用，这就是面向对象思想。 面向对象思想:  面向对象思想是基于面向过程的编程思想。 面向过程:强调的是每一个功能的步骤 面向对象:强调的是对象，由对象去调用功能  特点：  是一种更符合我们思考习惯的思想 可以将复杂的事情简单化 程序员从执行者变成了指挥者  2 类与对象及其使用 类与对象的关系 学习编程语言，是为了模拟现实世界的事物，提高生产效率，实现信息化。   我们如何表示一个现实世界事物呢： 属性:  该事物的描述信息 行为: 该事物能够做什么   Java语言的最基本单位是类，所有我们就把事物用类来体现。 类:是一组相关的属性和行为的集合。 对象:是该类事物的具体体现。 java中用class描述事物: 属性(成员变量):和以前定义变量一样，只是在类中方法外。 行为(成员方法):和以前定义方法一样，只不过把sta...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/./assets/images/elaina/elaina10.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Elaina-boom</div><div class="author-info-description">Can you see me?</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%96%B9%E6%B3%95%E7%9A%84%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">1 方法的概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-void"><span class="toc-number">1.2.</span> <span class="toc-text">2 void</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E9%87%8D%E8%BD%BD-Overload"><span class="toc-number">1.3.</span> <span class="toc-text">3 重载(Overload)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%96%B9%E6%B3%95%E7%9A%84%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E9%97%AE%E9%A2%98"><span class="toc-number">1.4.</span> <span class="toc-text">4 方法的参数传递问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%96%B9%E6%B3%95%E7%9A%84%E9%80%92%E5%BD%92"><span class="toc-number">1.5.</span> <span class="toc-text">5 方法的递归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="toc-number">1.6.</span> <span class="toc-text">6 全局变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E6%96%87%E6%A1%A3%E6%B3%A8%E9%87%8A"><span class="toc-number">1.7.</span> <span class="toc-text">7 文档注释</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/31/API/" title="7.API">7.API</a><time datetime="2026-03-31T07:49:35.567Z" title="发表于 2026-03-31 15:49:35">2026-03-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/31/1-Java%E5%85%A5%E9%97%A8/" title="1.Java入门">1.Java入门</a><time datetime="2026-03-31T07:41:11.251Z" title="发表于 2026-03-31 15:41:11">2026-03-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/31/2-%E5%8F%98%E9%87%8F-%E8%BF%90%E7%AE%97%E7%AC%A6/" title="2.变量&amp;运算符">2.变量&amp;运算符</a><time datetime="2026-03-31T07:41:09.486Z" title="发表于 2026-03-31 15:41:09">2026-03-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/31/3-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5/" title="3.流程控制语句">3.流程控制语句</a><time datetime="2026-03-31T07:41:07.540Z" title="发表于 2026-03-31 15:41:07">2026-03-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/31/5-%E6%95%B0%E7%BB%84/" title="5.数组">5.数组</a><time datetime="2026-03-31T07:41:06.334Z" title="发表于 2026-03-31 15:41:06">2026-03-31</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/./assets/images/elaina/elaina2.jpg);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Elaina-boom</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="12357158" data-server="netease" data-type="artist" data-fixed="true" data-autoplay="true" data-lrcType="-1"> </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/metingjs/dist/Meting.min.js"></script><script>(() => {
+  const destroyAplayer = () => {
+    if (window.aplayers) {
+      for (let i = 0; i < window.aplayers.length; i++) {
+        if (!window.aplayers[i].options.fixed) {
+          window.aplayers[i].destroy()
+        }
+      }
+    }
+  }
+
+  const runMetingJS = () => {
+    typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+  }
+
+  btf.addGlobalFn('pjaxSend', destroyAplayer, 'destroyAplayer')
+  btf.addGlobalFn('pjaxComplete', loadMeting, 'runMetingJS')
+})()</script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js" defer="defer"></script><script>document.addEventListener('DOMContentLoaded', () => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      false
+        ? pjax.loadUrl('/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
